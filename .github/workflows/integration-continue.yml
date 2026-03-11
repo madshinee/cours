@@ -1,0 +1,29 @@
+name: Integration Continue
+
+on: push
+
+jobs:
+  integration-continue:
+    name: Gestion des variables d'environnement et secrets
+    runs-on: ubuntu-latest
+
+    # Définition des variables d'environnement pour les étapes du pipeline
+    env:
+      STEP1: "Workflow - Initialisation"
+
+    steps:
+      # using variables d'environnement et secrets pour les étapes du pipeline
+      - name: Etape 1 - Variable workflow
+        run: |
+          echo "Demarrage du pipeline d'intégration continue"
+          echo "STEP1= $STEP1"
+
+      - name: Étape 2 - Variable Repository
+        run: |
+          echo "Variable d'environnement pour l'étape 2"
+          echo "STEP2= ${{ vars.STEP2 }}"
+
+      - name: Étape 3 - Variable Secret
+        run: |
+          echo "Variable d'environnement pour l'étape 3"
+          echo "STEP3= ${{ secrets.STEP3 }}"
