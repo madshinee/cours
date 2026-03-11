@@ -1,0 +1,40 @@
+name: demonstrationci
+
+on: push
+
+jobs:
+  init:
+    runs-on: ubuntu-latest
+    steps:
+        - run: echo 'hello mad'
+        - run: echo $HOSTNAME
+  
+  code:
+    runs-on: ubuntu-latest
+    steps:
+        - run: echo 'etape 2'
+        - run: echo '2 ok'
+  
+  build:
+    runs-on: ubuntu-latest
+    steps:
+        - run: echo 'etape 3'
+        - run: echo '3 ok'
+  
+  test:
+    runs-on: ubuntu-latest
+    steps:
+        - run: echo 'etape 4'
+        - run: echo '4 ok'
+  
+  package:
+    runs-on: ubuntu-latest
+    steps:
+        - run: echo 'etape 5'
+        - run: echo '5 ok'
+  
+  complete:
+    runs-on: ubuntu-latest
+    steps:
+        - run: echo 'etape 6'
+        - run: echo 'fin'
