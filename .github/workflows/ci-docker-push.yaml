@@ -5,11 +5,6 @@ on:
     branches:
       - lab-docker
 
-permissions:
-  security-events: write
-  actions: read
-  contents: read
-
 jobs:
   test-runner:
     runs-on: self-hosted
@@ -19,31 +14,9 @@ jobs:
         shell: cmd
         run: hostname
 
-  trivy-scan:
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        
-      - name: Run Trivy vulnerability scanner
-        uses: aquasecurity/trivy-action@master
-        with:
-          scan-type: 'fs'
-          scan-ref: '.'
-          format: 'sarif'
-          output: 'trivy-results.sarif'
-          
-      - name: Upload Trivy scan results
-        uses: github/codeql-action/upload-sarif@v4
-        if: always()
-        with:
-          sarif_file: 'trivy-results.sarif'
-
   docker:
     runs-on: ubuntu-latest
 
-    #environment: dev
 
     env:
       IMAGE_NAME: ci-html-demo
@@ -69,3 +42,13 @@ jobs:
       - name: Push de l'image Docker
         run: |
           docker push $DOCKER_REGISTRY/$IMAGE_NAME:$IMAGE_TAG
+
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@0.20.0
+        with:
+          image-ref: $DOCKER_REGISTRY/$IMAGE_NAME:$IMAGE_TAG
+          format: 'table'
+          severity: 'CRITICAL,HIGH,MEDIUM'
+          exit-code: 1
+          vuln-type: 'os,library'
+          ignore-unfixed: true
