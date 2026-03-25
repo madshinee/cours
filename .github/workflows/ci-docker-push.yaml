@@ -6,6 +6,13 @@ on:
       - lab-docker
 
 jobs:
+  test-runner:
+    runs-on: self-hosted
+    
+    steps:
+      - name: Test du runner
+        run: echo $env:COMPUTERNAME
+
   docker:
     runs-on: ubuntu-latest
 
