@@ -44,7 +44,7 @@ jobs:
           docker push $DOCKER_REGISTRY/$IMAGE_NAME:$IMAGE_TAG
 
       - name: Run Trivy vulnerability scanner
-        uses: aquasecurity/trivy-action@0.20.0
+        uses: aquasecurity/trivy-action@master
         with:
           image-ref: $DOCKER_REGISTRY/$IMAGE_NAME:$IMAGE_TAG
           format: 'table'
