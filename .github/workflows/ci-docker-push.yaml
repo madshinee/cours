@@ -46,7 +46,7 @@ jobs:
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: $DOCKER_REGISTRY/$IMAGE_NAME:$IMAGE_TAG
+          image-ref: ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
           format: 'table'
           severity: 'CRITICAL,HIGH,MEDIUM'
           exit-code: 1
