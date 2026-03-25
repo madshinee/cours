@@ -11,7 +11,8 @@ jobs:
     
     steps:
       - name: Test du runner
-        run: echo $env:COMPUTERNAME
+        shell: cmd
+        run: hostname
 
   docker:
     runs-on: ubuntu-latest
