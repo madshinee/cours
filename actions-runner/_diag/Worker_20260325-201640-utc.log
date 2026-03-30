@@ -1,0 +1,1503 @@
+[2026-03-25 20:16:40Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2026-03-25 20:16:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\MAD LVLC\cours\actions-runner\bin'
+[2026-03-25 20:16:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\MAD LVLC\cours\actions-runner'
+[2026-03-25 20:16:40Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\MAD LVLC\cours\actions-runner\.credentials'
+[2026-03-25 20:16:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\MAD LVLC\cours\actions-runner\bin'
+[2026-03-25 20:16:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\MAD LVLC\cours\actions-runner'
+[2026-03-25 20:16:40Z INFO HostContext] Well known config file 'Runner': 'C:\Users\MAD LVLC\cours\actions-runner\.runner'
+[2026-03-25 20:16:40Z INFO Worker] Version: 2.333.0
+[2026-03-25 20:16:40Z INFO Worker] Commit: 8d231aaf863e5fcdd02d35bdfda369feafd08adb
+[2026-03-25 20:16:40Z INFO Worker] Culture: fr-SN
+[2026-03-25 20:16:40Z INFO Worker] UI Culture: fr-FR
+[2026-03-25 20:16:40Z INFO Worker] Waiting to receive the job message from the channel.
+[2026-03-25 20:16:40Z INFO ProcessChannel] Receiving message of length 19005, with hash 'd510152fe581e20dca07195854c7cd07b44aa04b1c360ebb56dc3379bc7f748f'
+[2026-03-25 20:16:40Z INFO Worker] Message received.
+[2026-03-25 20:16:41Z INFO Worker] Job message:
+ {
+  "fileTable": [
+    ".github/workflows/ci-docker-push.yaml"
+  ],
+  "mask": [
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    }
+  ],
+  "steps": [
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 18,
+        "col": 15,
+        "lit": "Test du runner"
+      },
+      "contextName": "__run",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 20,
+              "col": 14,
+              "lit": "hostname"
+            }
+          },
+          {
+            "key": "shell",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 19,
+              "col": 16,
+              "lit": "cmd"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "05e7430d-b834-4cf0-9c54-740eeb0c289b",
+      "name": "__run"
+    }
+  ],
+  "variables": {
+    "Actions.EnableHttpRedirects": {
+      "value": "true"
+    },
+    "DistributedTask.AddWarningToNode12Action": {
+      "value": "true"
+    },
+    "DistributedTask.AddWarningToNode16Action": {
+      "value": "true"
+    },
+    "DistributedTask.AllowRunnerContainerHooks": {
+      "value": "true"
+    },
+    "DistributedTask.DeprecateStepOutputCommands": {
+      "value": "true"
+    },
+    "DistributedTask.DetailUntarFailure": {
+      "value": "true"
+    },
+    "DistributedTask.EnableCompositeActions": {
+      "value": "true"
+    },
+    "DistributedTask.EnableJobServerQueueTelemetry": {
+      "value": "true"
+    },
+    "DistributedTask.EnhancedAnnotations": {
+      "value": "true"
+    },
+    "DistributedTask.ForceGithubJavascriptActionsToNode16": {
+      "value": "true"
+    },
+    "DistributedTask.ForceGithubJavascriptActionsToNode20": {
+      "value": "true"
+    },
+    "DistributedTask.LogTemplateErrorsAsDebugMessages": {
+      "value": "true"
+    },
+    "DistributedTask.MarkJobAsFailedOnWorkerCrash": {
+      "value": "true"
+    },
+    "DistributedTask.NewActionMetadata": {
+      "value": "true"
+    },
+    "DistributedTask.UploadStepSummary": {
+      "value": "true"
+    },
+    "DistributedTask.UseActionArchiveCache": {
+      "value": "true"
+    },
+    "DistributedTask.UseWhich2": {
+      "value": "true"
+    },
+    "RunService.FixEmbeddedIssues": {
+      "value": "true"
+    },
+    "actions.runner.requirenode24": {
+      "value": "false"
+    },
+    "actions.runner.usenode24bydefault": {
+      "value": "false"
+    },
+    "actions.runner.warnonnode20": {
+      "value": "true"
+    },
+    "actions_add_check_run_id_to_job_context": {
+      "value": "true"
+    },
+    "actions_container_action_runner_temp": {
+      "value": "true"
+    },
+    "actions_display_helpful_actions_download_errors": {
+      "value": "true"
+    },
+    "actions_runner_compare_workflow_parser": {
+      "value": "false"
+    },
+    "actions_runner_emit_composite_markers": {
+      "value": "false"
+    },
+    "actions_service_container_command": {
+      "value": "false"
+    },
+    "actions_set_orchestration_id_env_for_actions": {
+      "value": "true"
+    },
+    "actions_skip_retry_complete_job_upon_known_errors": {
+      "value": "true"
+    },
+    "actions_snapshot_preflight_hosted_runner_check": {
+      "value": "false"
+    },
+    "actions_snapshot_preflight_image_gen_pool_check": {
+      "value": "false"
+    },
+    "actions_uses_cache_service_v2": {
+      "value": "true"
+    },
+    "github_token": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.from_run_service": {
+      "value": "true"
+    },
+    "system.github.job": {
+      "value": "test-runner"
+    },
+    "system.github.launch_endpoint": {
+      "value": "https://launch.actions.githubusercontent.com"
+    },
+    "system.github.results_endpoint": {
+      "value": "https://results-receiver.actions.githubusercontent.com/"
+    },
+    "system.github.results_upload_with_sdk": {
+      "value": "true"
+    },
+    "system.github.token": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.github.token.permissions": {
+      "value": "{\"Actions\":\"read\",\"Contents\":\"read\",\"Metadata\":\"read\",\"SecurityEvents\":\"write\"}"
+    },
+    "system.orchestrationId": {
+      "value": "670ff5b9-f668-4cb5-a6b8-619db4674068.test-runner.__default"
+    },
+    "system.phaseDisplayName": {
+      "value": "test-runner"
+    },
+    "system.runner.lowdiskspacethreshold": {
+      "value": "100"
+    },
+    "system.runnerEnvironment": {
+      "value": "self-hosted"
+    },
+    "system.runnerGroupName": {
+      "value": "Default"
+    }
+  },
+  "messageType": "RunnerJobRequest",
+  "plan": {
+    "scopeIdentifier": "00000000-0000-0000-0000-000000000000",
+    "planType": "actions",
+    "version": 0,
+    "planId": "670ff5b9-f668-4cb5-a6b8-619db4674068",
+    "planGroup": null,
+    "artifactUri": null,
+    "artifactLocation": null,
+    "definition": null,
+    "owner": null
+  },
+  "timeline": {
+    "id": "670ff5b9-f668-4cb5-a6b8-619db4674068",
+    "changeId": 0,
+    "location": null
+  },
+  "jobId": "5288aeee-7b78-5227-bb1c-3a6581e7c9ae",
+  "jobDisplayName": "test-runner",
+  "jobName": "__default",
+  "requestId": 0,
+  "lockedUntil": "0001-01-01T00:00:00",
+  "resources": {
+    "endpoints": [
+      {
+        "data": {
+          "ServerId": "",
+          "ServerName": "",
+          "CacheServerUrl": "https://artifactcache.actions.githubusercontent.com/0duiAwq37SRPNZWKI966qzwOJL8Rlu1lgvqxlNV9gAVnE7KyW8/",
+          "FeedStreamUrl": "wss://results-receiver.actions.githubusercontent.com/_ws/ingest.sock",
+          "ResultsServiceUrl": "https://results-receiver.actions.githubusercontent.com/",
+          "PipelinesServiceUrl": "https://pipelinesghubeus24.actions.githubusercontent.com/0duiAwq37SRPNZWKI966qzwOJL8Rlu1lgvqxlNV9gAVnE7KyW8/",
+          "GenerateIdTokenUrl": "",
+          "ConnectivityChecks": "[\"https://broker.actions.githubusercontent.com/health\",\"https://token.actions.githubusercontent.com/ready\",\"https://run.actions.githubusercontent.com/health\"]"
+        },
+        "name": "SystemVssConnection",
+        "url": "https://run-actions-2-azure-eastus.actions.githubusercontent.com/71/",
+        "authorization": {
+          "parameters": {
+            "AccessToken": "***"
+          },
+          "scheme": "OAuth"
+        },
+        "isShared": false,
+        "isReady": true
+      }
+    ]
+  },
+  "contextData": {
+    "github": {
+      "t": 2,
+      "d": [
+        {
+          "k": "ref",
+          "v": "refs/heads/lab-docker"
+        },
+        {
+          "k": "sha",
+          "v": "0129e55c79cdf1f1791a1494f2d50f67b068234c"
+        },
+        {
+          "k": "repository",
+          "v": "madshinee/cours"
+        },
+        {
+          "k": "repository_owner",
+          "v": "madshinee"
+        },
+        {
+          "k": "repository_owner_id",
+          "v": "185641923"
+        },
+        {
+          "k": "repositoryUrl",
+          "v": "git://github.com/madshinee/cours.git"
+        },
+        {
+          "k": "run_id",
+          "v": "23561999219"
+        },
+        {
+          "k": "run_number",
+          "v": "5"
+        },
+        {
+          "k": "retention_days",
+          "v": "90"
+        },
+        {
+          "k": "run_attempt",
+          "v": "1"
+        },
+        {
+          "k": "artifact_cache_size_limit",
+          "v": "10"
+        },
+        {
+          "k": "repository_visibility",
+          "v": "public"
+        },
+        {
+          "k": "actor_id",
+          "v": "185641923"
+        },
+        {
+          "k": "actor",
+          "v": "madshinee"
+        },
+        {
+          "k": "workflow",
+          "v": "CI Docker Build & Push"
+        },
+        {
+          "k": "head_ref",
+          "v": ""
+        },
+        {
+          "k": "base_ref",
+          "v": ""
+        },
+        {
+          "k": "event_name",
+          "v": "push"
+        },
+        {
+          "k": "server_url",
+          "v": "https://github.com"
+        },
+        {
+          "k": "api_url",
+          "v": "https://api.github.com"
+        },
+        {
+          "k": "graphql_url",
+          "v": "https://api.github.com/graphql"
+        },
+        {
+          "k": "ref_name",
+          "v": "lab-docker"
+        },
+        {
+          "k": "ref_protected",
+          "v": false
+        },
+        {
+          "k": "ref_type",
+          "v": "branch"
+        },
+        {
+          "k": "secret_source",
+          "v": "Actions"
+        },
+        {
+          "k": "event",
+          "v": {
+            "t": 2,
+            "d": [
+              {
+                "k": "after",
+                "v": "0129e55c79cdf1f1791a1494f2d50f67b068234c"
+              },
+              {
+                "k": "base_ref",
+                "v": null
+              },
+              {
+                "k": "before",
+                "v": "f23b727161972719a3889db7a577e7c554da2bbf"
+              },
+              {
+                "k": "commits",
+                "v": {
+                  "t": 1,
+                  "a": [
+                    {
+                      "t": 2,
+                      "d": [
+                        {
+                          "k": "author",
+                          "v": {
+                            "t": 2,
+                            "d": [
+                              {
+                                "k": "email",
+                                "v": "madamadiouf0@gmail.com"
+                              },
+                              {
+                                "k": "name",
+                                "v": "madshinee"
+                              },
+                              {
+                                "k": "username",
+                                "v": "madshinee"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "k": "committer",
+                          "v": {
+                            "t": 2,
+                            "d": [
+                              {
+                                "k": "email",
+                                "v": "madamadiouf0@gmail.com"
+                              },
+                              {
+                                "k": "name",
+                                "v": "madshinee"
+                              },
+                              {
+                                "k": "username",
+                                "v": "madshinee"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "k": "distinct",
+                          "v": true
+                        },
+                        {
+                          "k": "id",
+                          "v": "0129e55c79cdf1f1791a1494f2d50f67b068234c"
+                        },
+                        {
+                          "k": "message",
+                          "v": "scann2"
+                        },
+                        {
+                          "k": "timestamp",
+                          "v": "2026-03-25T20:16:20Z"
+                        },
+                        {
+                          "k": "tree_id",
+                          "v": "afc32abeffdd6da4b53ee5301b27c64ea9b1cf89"
+                        },
+                        {
+                          "k": "url",
+                          "v": "https://github.com/madshinee/cours/commit/0129e55c79cdf1f1791a1494f2d50f67b068234c"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "compare",
+                "v": "https://github.com/madshinee/cours/compare/f23b72716197...0129e55c79cd"
+              },
+              {
+                "k": "created",
+                "v": false
+              },
+              {
+                "k": "deleted",
+                "v": false
+              },
+              {
+                "k": "forced",
+                "v": false
+              },
+              {
+                "k": "head_commit",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "author",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "email",
+                            "v": "madamadiouf0@gmail.com"
+                          },
+                          {
+                            "k": "name",
+                            "v": "madshinee"
+                          },
+                          {
+                            "k": "username",
+                            "v": "madshinee"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "committer",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "email",
+                            "v": "madamadiouf0@gmail.com"
+                          },
+                          {
+                            "k": "name",
+                            "v": "madshinee"
+                          },
+                          {
+                            "k": "username",
+                            "v": "madshinee"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "distinct",
+                      "v": true
+                    },
+                    {
+                      "k": "id",
+                      "v": "0129e55c79cdf1f1791a1494f2d50f67b068234c"
+                    },
+                    {
+                      "k": "message",
+                      "v": "scann2"
+                    },
+                    {
+                      "k": "timestamp",
+                      "v": "2026-03-25T20:16:20Z"
+                    },
+                    {
+                      "k": "tree_id",
+                      "v": "afc32abeffdd6da4b53ee5301b27c64ea9b1cf89"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://github.com/madshinee/cours/commit/0129e55c79cdf1f1791a1494f2d50f67b068234c"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "pusher",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "email",
+                      "v": "dioufmad9@gmail.com"
+                    },
+                    {
+                      "k": "name",
+                      "v": "madshinee"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "ref",
+                "v": "refs/heads/lab-docker"
+              },
+              {
+                "k": "repository",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "allow_forking",
+                      "v": true
+                    },
+                    {
+                      "k": "archive_url",
+                      "v": "https://api.github.com/repos/madshinee/cours/{archive_format}{/ref}"
+                    },
+                    {
+                      "k": "archived",
+                      "v": false
+                    },
+                    {
+                      "k": "assignees_url",
+                      "v": "https://api.github.com/repos/madshinee/cours/assignees{/user}"
+                    },
+                    {
+                      "k": "blobs_url",
+                      "v": "https://api.github.com/repos/madshinee/cours/git/blobs{/sha}"
+                    },
+                    {
+                      "k": "branches_url",
+                      "v": "https://api.github.com/repos/madshinee/cours/branches{/branch}"
+                    },
+                    {
+                      "k": "clone_url",
+                      "v": "https://github.com/madshinee/cours.git"
+                    },
+                    {
+                      "k": "collaborators_url",
+                      "v": "https://api.github.com/repos/madshinee/cours/collaborators{/collaborator}"
+                    },
+                    {
+                      "k": "comments_url",
+                      "v": "https://api.github.com/repos/madshinee/cours/comments{/number}"
+                    },
+                    {
+                      "k": "commits_url",
+                      "v": "https://api.github.com/repos/madshinee/cours/commits{/sha}"
+                    },
+                    {
+                      "k": "compare_url",
+                      "v": "https://api.github.com/repos/madshinee/cours/compare/{base}...{head}"
+                    },
+                    {
+                      "k": "contents_url",
+                      "v": "https://api.github.com/repos/madshinee/cours/contents/{+path}"
+                    },
+                    {
+                      "k": "contributors_url",
+                      "v": "https://api.github.com/repos/madshinee/cours/contributors"
+                    },
+                    {
+                      "k": "created_at",
+                      "v": 1773251616.0
+                    },
+                    {
+                      "k": "default_branch",
+                      "v": "main"
+                    },
+                    {
+                      "k": "deployments_url",
+                      "v": "https://api.github.com/repos/madshinee/cours/deployments"
+                    },
+                    {
+                      "k": "description",
+                      "v": null
+                    },
+                    {
+                      "k": "disabled",
+                      "v": false
+                    },
+                    {
+                      "k": "downloads_url",
+                      "v": "https://api.github.com/repos/madshinee/cours/downloads"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/repos/madshinee/cours/events"
+                    },
+                    {
+                      "k": "fork",
+                      "v": false
+                    },
+                    {
+                      "k": "forks",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_url",
+                      "v": "https://api.github.com/repos/madshinee/cours/forks"
+                    },
+                    {
+                      "k": "full_name",
+                      "v": "madshinee/cours"
+                    },
+                    {
+                      "k": "git_commits_url",
+                      "v": "https://api.github.com/repos/madshinee/cours/git/commits{/sha}"
+                    },
+                    {
+                      "k": "git_refs_url",
+                      "v": "https://api.github.com/repos/madshinee/cours/git/refs{/sha}"
+                    },
+                    {
+                      "k": "git_tags_url",
+                      "v": "https://api.github.com/repos/madshinee/cours/git/tags{/sha}"
+                    },
+                    {
+                      "k": "git_url",
+                      "v": "git://github.com/madshinee/cours.git"
+                    },
+                    {
+                      "k": "has_discussions",
+                      "v": false
+                    },
+                    {
+                      "k": "has_downloads",
+                      "v": true
+                    },
+                    {
+                      "k": "has_issues",
+                      "v": true
+                    },
+                    {
+                      "k": "has_pages",
+                      "v": false
+                    },
+                    {
+                      "k": "has_projects",
+                      "v": true
+                    },
+                    {
+                      "k": "has_pull_requests",
+                      "v": true
+                    },
+                    {
+                      "k": "has_wiki",
+                      "v": true
+                    },
+                    {
+                      "k": "homepage",
+                      "v": null
+                    },
+                    {
+                      "k": "hooks_url",
+                      "v": "https://api.github.com/repos/madshinee/cours/hooks"
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/madshinee/cours"
+                    },
+                    {
+                      "k": "id",
+                      "v": 1179119337.0
+                    },
+                    {
+                      "k": "is_template",
+                      "v": false
+                    },
+                    {
+                      "k": "issue_comment_url",
+                      "v": "https://api.github.com/repos/madshinee/cours/issues/comments{/number}"
+                    },
+                    {
+                      "k": "issue_events_url",
+                      "v": "https://api.github.com/repos/madshinee/cours/issues/events{/number}"
+                    },
+                    {
+                      "k": "issues_url",
+                      "v": "https://api.github.com/repos/madshinee/cours/issues{/number}"
+                    },
+                    {
+                      "k": "keys_url",
+                      "v": "https://api.github.com/repos/madshinee/cours/keys{/key_id}"
+                    },
+                    {
+                      "k": "labels_url",
+                      "v": "https://api.github.com/repos/madshinee/cours/labels{/name}"
+                    },
+                    {
+                      "k": "language",
+                      "v": null
+                    },
+                    {
+                      "k": "languages_url",
+                      "v": "https://api.github.com/repos/madshinee/cours/languages"
+                    },
+                    {
+                      "k": "license",
+                      "v": null
+                    },
+                    {
+                      "k": "master_branch",
+                      "v": "main"
+                    },
+                    {
+                      "k": "merges_url",
+                      "v": "https://api.github.com/repos/madshinee/cours/merges"
+                    },
+                    {
+                      "k": "milestones_url",
+                      "v": "https://api.github.com/repos/madshinee/cours/milestones{/number}"
+                    },
+                    {
+                      "k": "mirror_url",
+                      "v": null
+                    },
+                    {
+                      "k": "name",
+                      "v": "cours"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "R_kgDORkfu6Q"
+                    },
+                    {
+                      "k": "notifications_url",
+                      "v": "https://api.github.com/repos/madshinee/cours/notifications{?since,all,participating}"
+                    },
+                    {
+                      "k": "open_issues",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "open_issues_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "owner",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "avatar_url",
+                            "v": "https://avatars.githubusercontent.com/u/185641923?v=4"
+                          },
+                          {
+                            "k": "email",
+                            "v": "dioufmad9@gmail.com"
+                          },
+                          {
+                            "k": "events_url",
+                            "v": "https://api.github.com/users/madshinee/events{/privacy}"
+                          },
+                          {
+                            "k": "followers_url",
+                            "v": "https://api.github.com/users/madshinee/followers"
+                          },
+                          {
+                            "k": "following_url",
+                            "v": "https://api.github.com/users/madshinee/following{/other_user}"
+                          },
+                          {
+                            "k": "gists_url",
+                            "v": "https://api.github.com/users/madshinee/gists{/gist_id}"
+                          },
+                          {
+                            "k": "gravatar_id",
+                            "v": ""
+                          },
+                          {
+                            "k": "html_url",
+                            "v": "https://github.com/madshinee"
+                          },
+                          {
+                            "k": "id",
+                            "v": 185641923.0
+                          },
+                          {
+                            "k": "login",
+                            "v": "madshinee"
+                          },
+                          {
+                            "k": "name",
+                            "v": "madshinee"
+                          },
+                          {
+                            "k": "node_id",
+                            "v": "U_kgDOCxCrww"
+                          },
+                          {
+                            "k": "organizations_url",
+                            "v": "https://api.github.com/users/madshinee/orgs"
+                          },
+                          {
+                            "k": "received_events_url",
+                            "v": "https://api.github.com/users/madshinee/received_events"
+                          },
+                          {
+                            "k": "repos_url",
+                            "v": "https://api.github.com/users/madshinee/repos"
+                          },
+                          {
+                            "k": "site_admin",
+                            "v": false
+                          },
+                          {
+                            "k": "starred_url",
+                            "v": "https://api.github.com/users/madshinee/starred{/owner}{/repo}"
+                          },
+                          {
+                            "k": "subscriptions_url",
+                            "v": "https://api.github.com/users/madshinee/subscriptions"
+                          },
+                          {
+                            "k": "type",
+                            "v": "User"
+                          },
+                          {
+                            "k": "url",
+                            "v": "https://api.github.com/users/madshinee"
+                          },
+                          {
+                            "k": "user_view_type",
+                            "v": "public"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "private",
+                      "v": false
+                    },
+                    {
+                      "k": "pull_request_creation_policy",
+                      "v": "all"
+                    },
+                    {
+                      "k": "pulls_url",
+                      "v": "https://api.github.com/repos/madshinee/cours/pulls{/number}"
+                    },
+                    {
+                      "k": "pushed_at",
+                      "v": 1774469794.0
+                    },
+                    {
+                      "k": "releases_url",
+                      "v": "https://api.github.com/repos/madshinee/cours/releases{/id}"
+                    },
+                    {
+                      "k": "size",
+                      "v": 7.0
+                    },
+                    {
+                      "k": "ssh_url",
+                      "v": "git@github.com:madshinee/cours.git"
+                    },
+                    {
+                      "k": "stargazers",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "stargazers_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "stargazers_url",
+                      "v": "https://api.github.com/repos/madshinee/cours/stargazers"
+                    },
+                    {
+                      "k": "statuses_url",
+                      "v": "https://api.github.com/repos/madshinee/cours/statuses/{sha}"
+                    },
+                    {
+                      "k": "subscribers_url",
+                      "v": "https://api.github.com/repos/madshinee/cours/subscribers"
+                    },
+                    {
+                      "k": "subscription_url",
+                      "v": "https://api.github.com/repos/madshinee/cours/subscription"
+                    },
+                    {
+                      "k": "svn_url",
+                      "v": "https://github.com/madshinee/cours"
+                    },
+                    {
+                      "k": "tags_url",
+                      "v": "https://api.github.com/repos/madshinee/cours/tags"
+                    },
+                    {
+                      "k": "teams_url",
+                      "v": "https://api.github.com/repos/madshinee/cours/teams"
+                    },
+                    {
+                      "k": "topics",
+                      "v": {
+                        "t": 1
+                      }
+                    },
+                    {
+                      "k": "trees_url",
+                      "v": "https://api.github.com/repos/madshinee/cours/git/trees{/sha}"
+                    },
+                    {
+                      "k": "updated_at",
+                      "v": "2026-03-11T18:58:27Z"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/repos/madshinee/cours"
+                    },
+                    {
+                      "k": "visibility",
+                      "v": "public"
+                    },
+                    {
+                      "k": "watchers",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "watchers_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "web_commit_signoff_required",
+                      "v": false
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "sender",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "avatar_url",
+                      "v": "https://avatars.githubusercontent.com/u/185641923?v=4"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/users/madshinee/events{/privacy}"
+                    },
+                    {
+                      "k": "followers_url",
+                      "v": "https://api.github.com/users/madshinee/followers"
+                    },
+                    {
+                      "k": "following_url",
+                      "v": "https://api.github.com/users/madshinee/following{/other_user}"
+                    },
+                    {
+                      "k": "gists_url",
+                      "v": "https://api.github.com/users/madshinee/gists{/gist_id}"
+                    },
+                    {
+                      "k": "gravatar_id",
+                      "v": ""
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/madshinee"
+                    },
+                    {
+                      "k": "id",
+                      "v": 185641923.0
+                    },
+                    {
+                      "k": "login",
+                      "v": "madshinee"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "U_kgDOCxCrww"
+                    },
+                    {
+                      "k": "organizations_url",
+                      "v": "https://api.github.com/users/madshinee/orgs"
+                    },
+                    {
+                      "k": "received_events_url",
+                      "v": "https://api.github.com/users/madshinee/received_events"
+                    },
+                    {
+                      "k": "repos_url",
+                      "v": "https://api.github.com/users/madshinee/repos"
+                    },
+                    {
+                      "k": "site_admin",
+                      "v": false
+                    },
+                    {
+                      "k": "starred_url",
+                      "v": "https://api.github.com/users/madshinee/starred{/owner}{/repo}"
+                    },
+                    {
+                      "k": "subscriptions_url",
+                      "v": "https://api.github.com/users/madshinee/subscriptions"
+                    },
+                    {
+                      "k": "type",
+                      "v": "User"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/users/madshinee"
+                    },
+                    {
+                      "k": "user_view_type",
+                      "v": "public"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "k": "workflow_ref",
+          "v": "madshinee/cours/.github/workflows/ci-docker-push.yaml@refs/heads/lab-docker"
+        },
+        {
+          "k": "workflow_sha",
+          "v": "0129e55c79cdf1f1791a1494f2d50f67b068234c"
+        },
+        {
+          "k": "repository_id",
+          "v": "1179119337"
+        },
+        {
+          "k": "triggering_actor",
+          "v": "madshinee"
+        }
+      ]
+    },
+    "inputs": {
+      "t": 2
+    },
+    "job": {
+      "t": 2,
+      "d": [
+        {
+          "k": "check_run_id",
+          "v": 68604007284.0
+        }
+      ]
+    },
+    "matrix": null,
+    "needs": {
+      "t": 2
+    },
+    "strategy": {
+      "t": 2,
+      "d": [
+        {
+          "k": "fail-fast",
+          "v": true
+        },
+        {
+          "k": "job-index",
+          "v": 0.0
+        },
+        {
+          "k": "job-total",
+          "v": 1.0
+        },
+        {
+          "k": "max-parallel",
+          "v": 1.0
+        }
+      ]
+    },
+    "vars": {
+      "t": 2
+    }
+  },
+  "billingOwnerId": "U_kgDOCxCrww"
+}
+[2026-03-25 20:16:41Z INFO JobRunner] Job ID 5288aeee-7b78-5227-bb1c-3a6581e7c9ae
+[2026-03-25 20:16:41Z INFO ConfigurationStore] currentAssemblyLocation: C:\Users\MAD LVLC\cours\actions-runner\bin\Runner.Worker.dll
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\MAD LVLC\cours\actions-runner\bin'
+[2026-03-25 20:16:41Z INFO ConfigurationStore] binPath: C:\Users\MAD LVLC\cours\actions-runner\bin
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\MAD LVLC\cours\actions-runner\bin'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\MAD LVLC\cours\actions-runner'
+[2026-03-25 20:16:41Z INFO ConfigurationStore] RootFolder: C:\Users\MAD LVLC\cours\actions-runner
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\MAD LVLC\cours\actions-runner\bin'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\MAD LVLC\cours\actions-runner'
+[2026-03-25 20:16:41Z INFO HostContext] Well known config file 'Runner': 'C:\Users\MAD LVLC\cours\actions-runner\.runner'
+[2026-03-25 20:16:41Z INFO ConfigurationStore] ConfigFilePath: C:\Users\MAD LVLC\cours\actions-runner\.runner
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\MAD LVLC\cours\actions-runner\bin'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\MAD LVLC\cours\actions-runner'
+[2026-03-25 20:16:41Z INFO HostContext] Well known config file 'MigratedRunner': 'C:\Users\MAD LVLC\cours\actions-runner\.runner_migrated'
+[2026-03-25 20:16:41Z INFO ConfigurationStore] MigratedConfigFilePath: C:\Users\MAD LVLC\cours\actions-runner\.runner_migrated
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\MAD LVLC\cours\actions-runner\bin'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\MAD LVLC\cours\actions-runner'
+[2026-03-25 20:16:41Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\MAD LVLC\cours\actions-runner\.credentials'
+[2026-03-25 20:16:41Z INFO ConfigurationStore] CredFilePath: C:\Users\MAD LVLC\cours\actions-runner\.credentials
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\MAD LVLC\cours\actions-runner\bin'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\MAD LVLC\cours\actions-runner'
+[2026-03-25 20:16:41Z INFO HostContext] Well known config file 'MigratedCredentials': 'C:\Users\MAD LVLC\cours\actions-runner\.credentials_migrated'
+[2026-03-25 20:16:41Z INFO ConfigurationStore] MigratedCredFilePath: C:\Users\MAD LVLC\cours\actions-runner\.credentials_migrated
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\MAD LVLC\cours\actions-runner\bin'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\MAD LVLC\cours\actions-runner'
+[2026-03-25 20:16:41Z INFO HostContext] Well known config file 'Service': 'C:\Users\MAD LVLC\cours\actions-runner\.service'
+[2026-03-25 20:16:41Z INFO ConfigurationStore] ServiceConfigFilePath: C:\Users\MAD LVLC\cours\actions-runner\.service
+[2026-03-25 20:16:41Z INFO ConfigurationStore] Read setting file: 383 chars
+[2026-03-25 20:16:41Z INFO JobRunner] Initializing launch client
+[2026-03-25 20:16:41Z INFO JobServerQueue] Initializing results client
+[2026-03-25 20:16:41Z INFO ResultServer] Creating websocket client ...wss://results-receiver.actions.githubusercontent.com/_ws/ingest.sock
+[2026-03-25 20:16:41Z INFO ResultServer] Attempting to start websocket client with delay 00:00:00.
+[2026-03-25 20:16:41Z INFO JobServerQueue] Start process web console line queue.
+[2026-03-25 20:16:41Z INFO JobServerQueue] Start process file upload queue.
+[2026-03-25 20:16:41Z INFO JobServerQueue] Start results file upload queue.
+[2026-03-25 20:16:41Z INFO JobServerQueue] Starting results-based upload queue...
+[2026-03-25 20:16:41Z INFO JobServerQueue] Start process timeline update queue.
+[2026-03-25 20:16:41Z INFO ExecutionContext] Initializing Job context
+[2026-03-25 20:16:41Z INFO ExecutionContext] Initialize GitHub context
+[2026-03-25 20:16:41Z INFO ExecutionContext] Initialize Env context
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\MAD LVLC\cours\actions-runner\bin'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\MAD LVLC\cours\actions-runner'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Diag': 'C:\Users\MAD LVLC\cours\actions-runner\_diag'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\MAD LVLC\cours\actions-runner\bin'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\MAD LVLC\cours\actions-runner'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Diag': 'C:\Users\MAD LVLC\cours\actions-runner\_diag'
+[2026-03-25 20:16:41Z INFO JobRunner] Starting the job execution context.
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\MAD LVLC\cours\actions-runner\bin'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\MAD LVLC\cours\actions-runner'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Work': 'C:\Users\MAD LVLC\cours\actions-runner\_work'
+[2026-03-25 20:16:41Z INFO JobRunner] Validating directory permissions for: 'C:\Users\MAD LVLC\cours\actions-runner\_work'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\MAD LVLC\cours\actions-runner\bin'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\MAD LVLC\cours\actions-runner'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Work': 'C:\Users\MAD LVLC\cours\actions-runner\_work'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Tools': 'C:\Users\MAD LVLC\cours\actions-runner\_work\_tool'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\MAD LVLC\cours\actions-runner\bin'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\MAD LVLC\cours\actions-runner'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Work': 'C:\Users\MAD LVLC\cours\actions-runner\_work'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Temp': 'C:\Users\MAD LVLC\cours\actions-runner\_work\_temp'
+[2026-03-25 20:16:41Z INFO JobRunner] Getting job extension.
+[2026-03-25 20:16:41Z INFO JobRunner] Initialize job. Getting all job steps.
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\MAD LVLC\cours\actions-runner\bin'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\MAD LVLC\cours\actions-runner'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Diag': 'C:\Users\MAD LVLC\cours\actions-runner\_diag'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\MAD LVLC\cours\actions-runner\bin'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\MAD LVLC\cours\actions-runner'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Diag': 'C:\Users\MAD LVLC\cours\actions-runner\_diag'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\MAD LVLC\cours\actions-runner\bin'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\MAD LVLC\cours\actions-runner'
+[2026-03-25 20:16:41Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\MAD LVLC\cours\actions-runner\.credentials'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\MAD LVLC\cours\actions-runner\bin'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\MAD LVLC\cours\actions-runner'
+[2026-03-25 20:16:41Z INFO HostContext] Well known config file 'SetupInfo': 'C:\Users\MAD LVLC\cours\actions-runner\.setup_info'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\MAD LVLC\cours\actions-runner\bin'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\MAD LVLC\cours\actions-runner'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Work': 'C:\Users\MAD LVLC\cours\actions-runner\_work'
+[2026-03-25 20:16:41Z INFO PipelineDirectoryManager] Loading tracking config if exists: C:\Users\MAD LVLC\cours\actions-runner\_work\_PipelineMapping\madshinee/cours\PipelineFolder.json
+[2026-03-25 20:16:41Z INFO PipelineDirectoryManager] Updating job run properties.
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\MAD LVLC\cours\actions-runner\bin'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\MAD LVLC\cours\actions-runner'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Work': 'C:\Users\MAD LVLC\cours\actions-runner\_work'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\MAD LVLC\cours\actions-runner\bin'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\MAD LVLC\cours\actions-runner'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Work': 'C:\Users\MAD LVLC\cours\actions-runner\_work'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\MAD LVLC\cours\actions-runner\bin'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\MAD LVLC\cours\actions-runner'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Work': 'C:\Users\MAD LVLC\cours\actions-runner\_work'
+[2026-03-25 20:16:41Z INFO JobExtension] Downloading actions
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\MAD LVLC\cours\actions-runner\bin'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\MAD LVLC\cours\actions-runner'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Work': 'C:\Users\MAD LVLC\cours\actions-runner\_work'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Actions': 'C:\Users\MAD LVLC\cours\actions-runner\_work\_actions'
+[2026-03-25 20:16:41Z INFO JobExtension] Adding .
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\MAD LVLC\cours\actions-runner\bin'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\MAD LVLC\cours\actions-runner'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Diag': 'C:\Users\MAD LVLC\cours\actions-runner\_diag'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\MAD LVLC\cours\actions-runner\bin'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\MAD LVLC\cours\actions-runner'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Diag': 'C:\Users\MAD LVLC\cours\actions-runner\_diag'
+[2026-03-25 20:16:41Z INFO JobExtension] Total accessible running process: 234.
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\MAD LVLC\cours\actions-runner\bin'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\MAD LVLC\cours\actions-runner'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Work': 'C:\Users\MAD LVLC\cours\actions-runner\_work'
+[2026-03-25 20:16:41Z INFO JobExtension] Start checking server connectivity.
+[2026-03-25 20:16:41Z INFO JobExtension] Check server connectivity for https://broker.actions.githubusercontent.com/health.
+[2026-03-25 20:16:41Z INFO JobExtension] Check server connectivity for https://token.actions.githubusercontent.com/ready.
+[2026-03-25 20:16:41Z INFO JobExtension] Check server connectivity for https://run.actions.githubusercontent.com/health.
+[2026-03-25 20:16:41Z INFO JobExtension] Start checking service connectivity in background.
+[2026-03-25 20:16:41Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "setup_job",
+  "type": "runner",
+  "stage": "Pre",
+  "stepId": "b25742a4-8f32-4155-ae72-0b5739563e9a",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 1,
+  "startTime": "2026-03-25T20:16:41.2409383Z",
+  "finishTime": "2026-03-25T20:16:41.3694493Z"
+}.
+[2026-03-25 20:16:41Z INFO JobRunner] Total job steps: 1.
+[2026-03-25 20:16:41Z INFO JobRunner] Run all job steps.
+[2026-03-25 20:16:41Z INFO StepsRunner] Processing step: DisplayName='Test du runner'
+[2026-03-25 20:16:41Z INFO StepsRunner] Evaluating: success()
+[2026-03-25 20:16:41Z INFO StepsRunner] Result: true
+[2026-03-25 20:16:41Z INFO StepsRunner] Starting the step.
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\MAD LVLC\cours\actions-runner\bin'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\MAD LVLC\cours\actions-runner'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Work': 'C:\Users\MAD LVLC\cours\actions-runner\_work'
+[2026-03-25 20:16:41Z INFO StepsRunner] Which2: 'chcp'
+[2026-03-25 20:16:41Z INFO StepsRunner] Location: 'C:\Windows\System32\chcp.COM'
+[2026-03-25 20:16:41Z INFO ProcessInvokerWrapper] Starting process:
+[2026-03-25 20:16:41Z INFO ProcessInvokerWrapper]   File name: 'C:\Windows\System32\chcp.COM'
+[2026-03-25 20:16:41Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2026-03-25 20:16:41Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\MAD LVLC\cours\actions-runner\_work'
+[2026-03-25 20:16:41Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-03-25 20:16:41Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-03-25 20:16:41Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-03-25 20:16:41Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-03-25 20:16:41Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-03-25 20:16:41Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-03-25 20:16:41Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-03-25 20:16:41Z INFO ProcessInvokerWrapper] Process started with process id 22008, waiting for process exit.
+[2026-03-25 20:16:41Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-03-25 20:16:41Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-03-25 20:16:41Z INFO Worker] Listening for cancel message from the channel.
+[2026-03-25 20:16:41Z INFO ProcessInvokerWrapper] Finished process 22008 with exit code 0, and elapsed time 00:00:00.0170984.
+[2026-03-25 20:16:41Z INFO Worker] Waiting for the job to complete or for a cancel message from the channel.
+[2026-03-25 20:16:41Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\MAD LVLC\cours\actions-runner\bin'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\MAD LVLC\cours\actions-runner'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Work': 'C:\Users\MAD LVLC\cours\actions-runner\_work'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Temp': 'C:\Users\MAD LVLC\cours\actions-runner\_work\_temp'
+[2026-03-25 20:16:41Z INFO ExecutionContext] Write event payload to C:\Users\MAD LVLC\cours\actions-runner\_work\_temp\_github_workflow\event.json
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\MAD LVLC\cours\actions-runner\bin'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\MAD LVLC\cours\actions-runner'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Work': 'C:\Users\MAD LVLC\cours\actions-runner\_work'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Temp': 'C:\Users\MAD LVLC\cours\actions-runner\_work\_temp'
+[2026-03-25 20:16:41Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2026-03-25 20:16:41Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathFileCommand, Runner.Worker
+[2026-03-25 20:16:41Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvFileCommand, Runner.Worker
+[2026-03-25 20:16:41Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.CreateStepSummaryCommand, Runner.Worker
+[2026-03-25 20:16:41Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateFileCommand, Runner.Worker
+[2026-03-25 20:16:41Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputFileCommand, Runner.Worker
+[2026-03-25 20:16:41Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2026-03-25 20:16:41Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.InternalPluginSetRepoPathCommandExtension, Runner.Worker
+[2026-03-25 20:16:41Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvCommandExtension, Runner.Worker
+[2026-03-25 20:16:41Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputCommandExtension, Runner.Worker
+[2026-03-25 20:16:41Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateCommandExtension, Runner.Worker
+[2026-03-25 20:16:41Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathCommandExtension, Runner.Worker
+[2026-03-25 20:16:41Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMaskCommandExtension, Runner.Worker
+[2026-03-25 20:16:41Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMatcherCommandExtension, Runner.Worker
+[2026-03-25 20:16:41Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.RemoveMatcherCommandExtension, Runner.Worker
+[2026-03-25 20:16:41Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.WarningCommandExtension, Runner.Worker
+[2026-03-25 20:16:41Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.ErrorCommandExtension, Runner.Worker
+[2026-03-25 20:16:41Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.NoticeCommandExtension, Runner.Worker
+[2026-03-25 20:16:41Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.DebugCommandExtension, Runner.Worker
+[2026-03-25 20:16:41Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.GroupCommandExtension, Runner.Worker
+[2026-03-25 20:16:41Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EndGroupCommandExtension, Runner.Worker
+[2026-03-25 20:16:41Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EchoCommandExtension, Runner.Worker
+[2026-03-25 20:16:41Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2026-03-25 20:16:41Z INFO ActionCommandManager] Register action command extension for command set-env
+[2026-03-25 20:16:41Z INFO ActionCommandManager] Register action command extension for command set-output
+[2026-03-25 20:16:41Z INFO ActionCommandManager] Register action command extension for command save-state
+[2026-03-25 20:16:41Z INFO ActionCommandManager] Register action command extension for command add-path
+[2026-03-25 20:16:41Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2026-03-25 20:16:41Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2026-03-25 20:16:41Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2026-03-25 20:16:41Z INFO ActionCommandManager] Register action command extension for command warning
+[2026-03-25 20:16:41Z INFO ActionCommandManager] Register action command extension for command error
+[2026-03-25 20:16:41Z INFO ActionCommandManager] Register action command extension for command notice
+[2026-03-25 20:16:41Z INFO ActionCommandManager] Register action command extension for command debug
+[2026-03-25 20:16:41Z INFO ActionCommandManager] Register action command extension for command group
+[2026-03-25 20:16:41Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2026-03-25 20:16:41Z INFO ActionCommandManager] Register action command extension for command echo
+[2026-03-25 20:16:41Z INFO ScriptHandler] Which2: 'cmd'
+[2026-03-25 20:16:41Z INFO ScriptHandler] Location: 'C:\Windows\System32\cmd.EXE'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\MAD LVLC\cours\actions-runner\bin'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\MAD LVLC\cours\actions-runner'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Work': 'C:\Users\MAD LVLC\cours\actions-runner\_work'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Temp': 'C:\Users\MAD LVLC\cours\actions-runner\_work\_temp'
+[2026-03-25 20:16:41Z INFO ScriptHandler] Which2: 'cmd'
+[2026-03-25 20:16:41Z INFO ScriptHandler] Location: 'C:\Windows\System32\cmd.EXE'
+[2026-03-25 20:16:41Z INFO ProcessInvokerWrapper] Starting process:
+[2026-03-25 20:16:41Z INFO ProcessInvokerWrapper]   File name: 'C:\Windows\System32\cmd.EXE'
+[2026-03-25 20:16:41Z INFO ProcessInvokerWrapper]   Arguments: '/D /E:ON /V:OFF /S /C "CALL "C:\Users\MAD LVLC\cours\actions-runner\_work\_temp\ff0d658c-24a3-423a-9d8e-7a1f66156a99.cmd""'
+[2026-03-25 20:16:41Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\MAD LVLC\cours\actions-runner\_work\cours\cours'
+[2026-03-25 20:16:41Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-03-25 20:16:41Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-03-25 20:16:41Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-03-25 20:16:41Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-03-25 20:16:41Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-03-25 20:16:41Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-03-25 20:16:41Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-03-25 20:16:41Z INFO ProcessInvokerWrapper] Process started with process id 18428, waiting for process exit.
+[2026-03-25 20:16:41Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-03-25 20:16:41Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-03-25 20:16:41Z INFO ProcessInvokerWrapper] Finished process 18428 with exit code 0, and elapsed time 00:00:00.0774947.
+[2026-03-25 20:16:41Z INFO CreateStepSummaryCommand] Step Summary file (C:\Users\MAD LVLC\cours\actions-runner\_work\_temp\_runner_file_commands\step_summary_ba8ec0af-0f42-468e-88a4-e7147f14a675) is empty; skipping attachment upload
+[2026-03-25 20:16:41Z INFO StepsRunner] Step result: 
+[2026-03-25 20:16:41Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "cmd",
+  "type": "run",
+  "stage": "Main",
+  "stepId": "05e7430d-b834-4cf0-9c54-740eeb0c289b",
+  "stepContextName": "__run",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 1,
+  "startTime": "2026-03-25T20:16:41.394979Z",
+  "finishTime": "2026-03-25T20:16:41.6782354Z"
+}.
+[2026-03-25 20:16:41Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2026-03-25 20:16:41Z INFO StepsRunner] Current state: job state = ''
+[2026-03-25 20:16:41Z INFO JobRunner] Finalize job.
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\MAD LVLC\cours\actions-runner\bin'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\MAD LVLC\cours\actions-runner'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Diag': 'C:\Users\MAD LVLC\cours\actions-runner\_diag'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Bin': 'C:\Users\MAD LVLC\cours\actions-runner\bin'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Root': 'C:\Users\MAD LVLC\cours\actions-runner'
+[2026-03-25 20:16:41Z INFO HostContext] Well known directory 'Diag': 'C:\Users\MAD LVLC\cours\actions-runner\_diag'
+[2026-03-25 20:16:41Z INFO JobExtension] Initialize Env context
+[2026-03-25 20:16:41Z INFO JobExtension] Initialize steps context
+[2026-03-25 20:16:41Z INFO JobExtension] Total accessible running process: 234.
+[2026-03-25 20:16:41Z INFO JobExtension] Wait for all connectivity checks to finish.
+[2026-03-25 20:16:41Z INFO ResultServer] Successfully started websocket client.
+[2026-03-25 20:16:41Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'b25742a4-8f32-4155-ae72-0b5739563e9a', success rate: 1/1.
+[2026-03-25 20:16:42Z INFO JobExtension] Connectivity check result: GitHub.Runner.Worker.JobExtension+CheckResult
+[2026-03-25 20:16:42Z INFO JobExtension] Connectivity check result: GitHub.Runner.Worker.JobExtension+CheckResult
+[2026-03-25 20:16:42Z INFO JobExtension] Connectivity check result: GitHub.Runner.Worker.JobExtension+CheckResult
+[2026-03-25 20:16:42Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "complete_job",
+  "type": "runner",
+  "stage": "Post",
+  "stepId": "81368036-0fca-4d16-9728-c378cfdd867d",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 1,
+  "startTime": "2026-03-25T20:16:41.6886037Z",
+  "finishTime": "2026-03-25T20:16:42.120764Z"
+}.
+[2026-03-25 20:16:42Z INFO JobRunner] Job result after all job steps finish: Succeeded
+[2026-03-25 20:16:42Z INFO JobRunner] Completing the job execution context.
+[2026-03-25 20:16:42Z INFO JobRunner] Shutting down the job server queue.
+[2026-03-25 20:16:42Z INFO JobServerQueue] Fire signal to shutdown all queues.
+[2026-03-25 20:16:42Z INFO JobServerQueue] Job timeline record has been updated for the first time.
+[2026-03-25 20:16:42Z INFO JobServerQueue] All queue process task stopped.
+[2026-03-25 20:16:42Z INFO JobServerQueue] Try to append 1 batches web console lines for record '05e7430d-b834-4cf0-9c54-740eeb0c289b', success rate: 1/1.
+[2026-03-25 20:16:42Z INFO JobServerQueue] Try to append 1 batches web console lines for record '81368036-0fca-4d16-9728-c378cfdd867d', success rate: 1/1.
+[2026-03-25 20:16:42Z INFO JobServerQueue] Web console line queue drained.
+[2026-03-25 20:16:42Z INFO JobServerQueue] Uploading 4 files in one shot.
+[2026-03-25 20:16:42Z INFO JobServerQueue] Try to upload 4 log files or attachments, success rate: 4/4.
+[2026-03-25 20:16:42Z INFO JobServerQueue] File upload queue drained.
+[2026-03-25 20:16:42Z INFO JobServerQueue] Starting results-based upload queue...
+[2026-03-25 20:16:42Z INFO JobServerQueue] Uploading 4 file(s) in one shot through results service.
+[2026-03-25 20:16:42Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-03-25 20:16:42Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\MAD LVLC\cours\actions-runner\_diag\blocks\670ff5b9-f668-4cb5-a6b8-619db4674068_b25742a4-8f32-4155-ae72-0b5739563e9a.1
+[2026-03-25 20:16:45Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-03-25 20:16:45Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\MAD LVLC\cours\actions-runner\_diag\blocks\670ff5b9-f668-4cb5-a6b8-619db4674068_05e7430d-b834-4cf0-9c54-740eeb0c289b.1
+[2026-03-25 20:16:45Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-03-25 20:16:45Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\MAD LVLC\cours\actions-runner\_diag\blocks\670ff5b9-f668-4cb5-a6b8-619db4674068_81368036-0fca-4d16-9728-c378cfdd867d.1
+[2026-03-25 20:16:46Z INFO JobServerQueue] Got a job log file to send to results service.
+[2026-03-25 20:16:46Z INFO JobServerQueue] Starting upload of job log file to results service ResultsLog, C:\Users\MAD LVLC\cours\actions-runner\_diag\blocks\670ff5b9-f668-4cb5-a6b8-619db4674068_5288aeee-7b78-5227-bb1c-3a6581e7c9ae.1
+[2026-03-25 20:16:47Z INFO JobServerQueue] Tried to upload 4 file(s) to results, success rate: 4/4.
+[2026-03-25 20:16:47Z INFO JobServerQueue] Results upload queue drained.
+[2026-03-25 20:16:47Z INFO JobServerQueue] Timeline update queue drained.
+[2026-03-25 20:16:47Z INFO JobServerQueue] Disposing job server ...
+[2026-03-25 20:16:47Z INFO JobServerQueue] Disposing results server ...
+[2026-03-25 20:16:47Z INFO JobServerQueue] All queue process tasks have been stopped, and all queues are drained.
+[2026-03-25 20:16:47Z INFO TempDirectoryManager] Cleaning runner temp folder: C:\Users\MAD LVLC\cours\actions-runner\_work\_temp
+[2026-03-25 20:16:47Z INFO HostContext] Well known directory 'Bin': 'C:\Users\MAD LVLC\cours\actions-runner\bin'
+[2026-03-25 20:16:47Z INFO HostContext] Well known directory 'Root': 'C:\Users\MAD LVLC\cours\actions-runner'
+[2026-03-25 20:16:47Z INFO HostContext] Well known directory 'Diag': 'C:\Users\MAD LVLC\cours\actions-runner\_diag'
+[2026-03-25 20:16:47Z INFO HostContext] Well known config file 'Telemetry': 'C:\Users\MAD LVLC\cours\actions-runner\_diag\.telemetry'
+[2026-03-25 20:16:47Z INFO JobRunner] Raising job completed against run service
+[2026-03-25 20:16:48Z INFO Worker] Job completed.

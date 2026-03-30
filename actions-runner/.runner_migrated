@@ -1,0 +1,11 @@
+﻿{
+  "agentId": 21,
+  "agentName": "MAD",
+  "poolId": 1,
+  "poolName": "Default",
+  "serverUrl": "https://pipelinesghubeus24.actions.githubusercontent.com/0duiAwq37SRPNZWKI966qzwOJL8Rlu1lgvqxlNV9gAVnE7KyW8/",
+  "gitHubUrl": "https://github.com/madshinee/cours",
+  "workFolder": "_work",
+  "useV2Flow": true,
+  "serverUrlV2": "https://broker.actions.githubusercontent.com/"
+}

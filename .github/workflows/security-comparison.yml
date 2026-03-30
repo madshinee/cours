@@ -1,0 +1,135 @@
+name: Security Comparison - Nginx Images
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - lab-docker
+
+jobs:
+  security-scan:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        image:
+          - nginx:alpine
+          - nginx:stable-alpine
+          - bitnami/nginx:latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Trivy
+        uses: aquasecurity/setup-trivy@e6c2f6c4bfa9cca268246c5fb84675d0e4d41245
+      
+      - name: Run Trivy on ${{ matrix.image }}
+        id: scan
+        run: |
+          echo "Scanning ${{ matrix.image }}..."
+          trivy image --format json --output report-${{ matrix.image }}.json ${{ matrix.image }}
+          
+          # Extract summary info
+          TOTAL=$(jq '.Results[0].Vulnerabilities | length' report-${{ matrix.image }}.json || echo "0")
+          CRITICAL=$(jq '.Results[0].Vulnerabilities | map(select(.Severity == "CRITICAL")) | length' report-${{ matrix.image }}.json || echo "0")
+          HIGH=$(jq '.Results[0].Vulnerabilities | map(select(.Severity == "HIGH")) | length' report-${{ matrix.image }}.json || echo "0")
+          MEDIUM=$(jq '.Results[0].Vulnerabilities | map(select(.Severity == "MEDIUM")) | length' report-${{ matrix.image }}.json || echo "0")
+          LOW=$(jq '.Results[0].Vulnerabilities | map(select(.Severity == "LOW")) | length' report-${{ matrix.image }}.json || echo "0")
+          
+          echo "total=$TOTAL" >> $GITHUB_OUTPUT
+          echo "critical=$CRITICAL" >> $GITHUB_OUTPUT
+          echo "high=$HIGH" >> $GITHUB_OUTPUT
+          echo "medium=$MEDIUM" >> $GITHUB_OUTPUT
+          echo "low=$LOW" >> $GITHUB_OUTPUT
+      
+      - name: Upload scan results
+        uses: actions/upload-artifact@v4
+        with:
+          name: trivy-report-${{ matrix.image }}
+          path: report-${{ matrix.image }}.json
+          retention-days: 30
+
+  generate-report:
+    needs: security-scan
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts/
+      
+      - name: Generate comparison report
+        run: |
+          # Create markdown report
+          cat > security-comparison.md << 'EOF'
+          # 🔒 Security Comparison - Nginx Base Images
+          
+          Generated on: $(date)
+          
+          ## 📊 Vulnerability Summary
+          
+          | Image | Total | Critical | High | Medium | Low |
+          |-------|-------|----------|------|--------|-----|
+          EOF
+          
+          # Process each image report
+          for image in "nginx:alpine" "nginx:stable-alpine" "bitnami/nginx:latest"; do
+            if [ -f "artifacts/trivy-report-$image/report-$image.json" ]; then
+              TOTAL=$(jq '.Results[0].Vulnerabilities | length' "artifacts/trivy-report-$image/report-$image.json" || echo "0")
+              CRITICAL=$(jq '.Results[0].Vulnerabilities | map(select(.Severity == "CRITICAL")) | length' "artifacts/trivy-report-$image/report-$image.json" || echo "0")
+              HIGH=$(jq '.Results[0].Vulnerabilities | map(select(.Severity == "HIGH")) | length' "artifacts/trivy-report-$image/report-$image.json" || echo "0")
+              MEDIUM=$(jq '.Results[0].Vulnerabilities | map(select(.Severity == "MEDIUM")) | length' "artifacts/trivy-report-$image/report-$image.json" || echo "0")
+              LOW=$(jq '.Results[0].Vulnerabilities | map(select(.Severity == "LOW")) | length' "artifacts/trivy-report-$image/report-$image.json" || echo "0")
+              
+              echo "| $image | $TOTAL | $CRITICAL | $HIGH | $MEDIUM | $LOW |" >> security-comparison.md
+            fi
+          done
+          
+          echo "" >> security-comparison.md
+          echo "## 📋 Detailed Findings" >> security-comparison.md
+          echo "" >> security-comparison.md
+          
+          # Add detailed findings for each image
+          for image in "nginx:alpine" "nginx:stable-alpine" "bitnami/nginx:latest"; do
+            if [ -f "artifacts/trivy-report-$image/report-$image.json" ]; then
+              echo "### $image" >> security-comparison.md
+              echo "" >> security-comparison.md
+              
+              # Get OS info
+              OS_INFO=$(jq -r '.Results[0].Target' "artifacts/trivy-report-$image/report-$image.json" || echo "Unknown")
+              echo "**Target:** $OS_INFO" >> security-comparison.md
+              echo "" >> security-comparison.md
+              
+              # Show top vulnerabilities
+              echo "**Top Vulnerabilities:**" >> security-comparison.md
+              jq -r '.Results[0].Vulnerabilities[] | "| \(.VulnerabilityID) | \(.Severity) | \(.PkgName) \(.InstalledVersion) | \(.FixedVersion // "Unfixed") |"' "artifacts/trivy-report-$image/report-$image.json" | head -10 >> security-comparison.md
+              echo "" >> security-comparison.md
+            fi
+          done
+      
+      - name: Upload comparison report
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-comparison-report
+          path: security-comparison.md
+          retention-days: 30
+      
+      - name: Comment PR with results
+        if: github.event_name == 'push'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const report = fs.readFileSync('security-comparison.md', 'utf8');
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: report
+            });
