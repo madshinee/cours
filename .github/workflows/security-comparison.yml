@@ -28,14 +28,16 @@ jobs:
         id: scan
         run: |
           echo "Scanning ${{ matrix.image }}..."
-          trivy image --format json --output report-${{ matrix.image }}.json ${{ matrix.image }}
+          # Clean image name for filename
+          IMAGE_NAME=$(echo "${{ matrix.image }}" | sed 's/[\/:]/-/g')
+          trivy image --format json --output report-${IMAGE_NAME}.json ${{ matrix.image }}
           
           # Extract summary info
-          TOTAL=$(jq '.Results[0].Vulnerabilities | length' report-${{ matrix.image }}.json || echo "0")
-          CRITICAL=$(jq '.Results[0].Vulnerabilities | map(select(.Severity == "CRITICAL")) | length' report-${{ matrix.image }}.json || echo "0")
-          HIGH=$(jq '.Results[0].Vulnerabilities | map(select(.Severity == "HIGH")) | length' report-${{ matrix.image }}.json || echo "0")
-          MEDIUM=$(jq '.Results[0].Vulnerabilities | map(select(.Severity == "MEDIUM")) | length' report-${{ matrix.image }}.json || echo "0")
-          LOW=$(jq '.Results[0].Vulnerabilities | map(select(.Severity == "LOW")) | length' report-${{ matrix.image }}.json || echo "0")
+          TOTAL=$(jq '.Results[0].Vulnerabilities | length' report-${IMAGE_NAME}.json || echo "0")
+          CRITICAL=$(jq '.Results[0].Vulnerabilities | map(select(.Severity == "CRITICAL")) | length' report-${IMAGE_NAME}.json || echo "0")
+          HIGH=$(jq '.Results[0].Vulnerabilities | map(select(.Severity == "HIGH")) | length' report-${IMAGE_NAME}.json || echo "0")
+          MEDIUM=$(jq '.Results[0].Vulnerabilities | map(select(.Severity == "MEDIUM")) | length' report-${IMAGE_NAME}.json || echo "0")
+          LOW=$(jq '.Results[0].Vulnerabilities | map(select(.Severity == "LOW")) | length' report-${IMAGE_NAME}.json || echo "0")
           
           echo "total=$TOTAL" >> $GITHUB_OUTPUT
           echo "critical=$CRITICAL" >> $GITHUB_OUTPUT
@@ -47,7 +49,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: trivy-report-${{ matrix.image }}
-          path: report-${{ matrix.image }}.json
+          path: report-*.json
           retention-days: 30
 
   generate-report:
@@ -79,12 +81,16 @@ jobs:
           
           # Process each image report
           for image in "nginx:alpine" "nginx:stable-alpine" "bitnami/nginx:latest"; do
-            if [ -f "artifacts/trivy-report-$image/report-$image.json" ]; then
-              TOTAL=$(jq '.Results[0].Vulnerabilities | length' "artifacts/trivy-report-$image/report-$image.json" || echo "0")
-              CRITICAL=$(jq '.Results[0].Vulnerabilities | map(select(.Severity == "CRITICAL")) | length' "artifacts/trivy-report-$image/report-$image.json" || echo "0")
-              HIGH=$(jq '.Results[0].Vulnerabilities | map(select(.Severity == "HIGH")) | length' "artifacts/trivy-report-$image/report-$image.json" || echo "0")
-              MEDIUM=$(jq '.Results[0].Vulnerabilities | map(select(.Severity == "MEDIUM")) | length' "artifacts/trivy-report-$image/report-$image.json" || echo "0")
-              LOW=$(jq '.Results[0].Vulnerabilities | map(select(.Severity == "LOW")) | length' "artifacts/trivy-report-$image/report-$image.json" || echo "0")
+            # Clean image name for filename
+            IMAGE_NAME=$(echo "$image" | sed 's/[\/:]/-/g')
+            REPORT_FILE="artifacts/trivy-report-$image/report-$IMAGE_NAME.json"
+            
+            if [ -f "$REPORT_FILE" ]; then
+              TOTAL=$(jq '.Results[0].Vulnerabilities | length' "$REPORT_FILE" || echo "0")
+              CRITICAL=$(jq '.Results[0].Vulnerabilities | map(select(.Severity == "CRITICAL")) | length' "$REPORT_FILE" || echo "0")
+              HIGH=$(jq '.Results[0].Vulnerabilities | map(select(.Severity == "HIGH")) | length' "$REPORT_FILE" || echo "0")
+              MEDIUM=$(jq '.Results[0].Vulnerabilities | map(select(.Severity == "MEDIUM")) | length' "$REPORT_FILE" || echo "0")
+              LOW=$(jq '.Results[0].Vulnerabilities | map(select(.Severity == "LOW")) | length' "$REPORT_FILE" || echo "0")
               
               echo "| $image | $TOTAL | $CRITICAL | $HIGH | $MEDIUM | $LOW |" >> security-comparison.md
             fi
@@ -96,18 +102,23 @@ jobs:
           
           # Add detailed findings for each image
           for image in "nginx:alpine" "nginx:stable-alpine" "bitnami/nginx:latest"; do
-            if [ -f "artifacts/trivy-report-$image/report-$image.json" ]; then
+            IMAGE_NAME=$(echo "$image" | sed 's/[\/:]/-/g')
+            REPORT_FILE="artifacts/trivy-report-$image/report-$IMAGE_NAME.json"
+            
+            if [ -f "$REPORT_FILE" ]; then
               echo "### $image" >> security-comparison.md
               echo "" >> security-comparison.md
               
               # Get OS info
-              OS_INFO=$(jq -r '.Results[0].Target' "artifacts/trivy-report-$image/report-$image.json" || echo "Unknown")
+              OS_INFO=$(jq -r '.Results[0].Target' "$REPORT_FILE" || echo "Unknown")
               echo "**Target:** $OS_INFO" >> security-comparison.md
               echo "" >> security-comparison.md
               
               # Show top vulnerabilities
               echo "**Top Vulnerabilities:**" >> security-comparison.md
-              jq -r '.Results[0].Vulnerabilities[] | "| \(.VulnerabilityID) | \(.Severity) | \(.PkgName) \(.InstalledVersion) | \(.FixedVersion // "Unfixed") |"' "artifacts/trivy-report-$image/report-$image.json" | head -10 >> security-comparison.md
+              echo "| CVE | Severity | Package | Version | Fixed |" >> security-comparison.md
+              echo "|-----|----------|---------|---------|-------|" >> security-comparison.md
+              jq -r '.Results[0].Vulnerabilities[] | "| \(.VulnerabilityID) | \(.Severity) | \(.PkgName) \(.InstalledVersion) | \(.FixedVersion // "Unfixed") |"' "$REPORT_FILE" | head -5 >> security-comparison.md
               echo "" >> security-comparison.md
             fi
           done
