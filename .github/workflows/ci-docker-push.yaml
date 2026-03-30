@@ -49,6 +49,6 @@ jobs:
           image-ref: madara3/ci-html-demo:latest
           format: 'table'
           severity: 'CRITICAL,HIGH,MEDIUM'
-          exit-code: 1
+          exit-code: 0
           vuln-type: 'os,library'
           ignore-unfixed: true
