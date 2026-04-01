@@ -65,6 +65,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           path: artifacts/
+          merge-multiple: true
       
       - name: Generate comparison report
         run: |
@@ -84,7 +85,7 @@ jobs:
           for image in "nginx:alpine" "nginx:stable-alpine" "bitnami/nginx:latest"; do
             # Clean image name for filename
             IMAGE_NAME=$(echo "$image" | sed 's/[\/:]/-/g')
-            REPORT_FILE="artifacts/trivy-report-$image/report-$IMAGE_NAME.json"
+            REPORT_FILE="artifacts/report-$IMAGE_NAME.json"
             
             if [ -f "$REPORT_FILE" ]; then
               TOTAL=$(jq '.Results[0].Vulnerabilities | length' "$REPORT_FILE" || echo "0")
@@ -104,7 +105,7 @@ jobs:
           # Add detailed findings for each image
           for image in "nginx:alpine" "nginx:stable-alpine" "bitnami/nginx:latest"; do
             IMAGE_NAME=$(echo "$image" | sed 's/[\/:]/-/g')
-            REPORT_FILE="artifacts/trivy-report-$image/report-$IMAGE_NAME.json"
+            REPORT_FILE="artifacts/report-$IMAGE_NAME.json"
             
             if [ -f "$REPORT_FILE" ]; then
               echo "### $image" >> security-comparison.md
